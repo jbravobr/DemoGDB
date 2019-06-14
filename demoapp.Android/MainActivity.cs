@@ -1,11 +1,10 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Runtime;
+using Com.Instabug.Library;
+using Com.Instabug.Library.Invocation;
+using SuaveControls.MaterialForms.Android;
 
 namespace demoapp.Droid
 {
@@ -17,7 +16,12 @@ namespace demoapp.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            RendererInitializer.Init();
             base.OnCreate(savedInstanceState);
+
+            new Instabug.Builder(Application, "86fae965aa72b45f6ce0f173e79c3357")
+                        .SetInvocationEvents(InstabugInvocationEvent.FloatingButton, InstabugInvocationEvent.Shake)
+                        .Build();
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

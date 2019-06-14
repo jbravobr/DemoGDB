@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using InstabugLib;
+using SuaveControls.MaterialForms.iOS;
 using UIKit;
 
 namespace demoapp.iOS
@@ -22,7 +24,11 @@ namespace demoapp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Instabug.StartWithToken("86fae965aa72b45f6ce0f173e79c3357", IBGInvocationEvent.Shake);
+
             global::Xamarin.Forms.Forms.Init();
+            RendererInitializer.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

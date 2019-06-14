@@ -2,7 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:demoapp"
+    xmlns:suave="clr-namespace:SuaveControls.MaterialForms;assembly=SuaveControls.MaterialForms"
     x:Class="demoapp.MainPage">
     <AbsoluteLayout>
         <ContentView
@@ -38,21 +38,17 @@
                     <RowDefinition
                         Height="Auto" />
                 </Grid.RowDefinitions>
-                <Entry
+                <suave:MaterialEntry
+                    AccentColor="Green"
                     Grid.Row="0"
                     Placeholder="Digite seu usuário"
-                    PlaceholderColor="Silver"
-                    FontSize="Medium"
-                    WidthRequest="200"
-                    ReturnType="Done" />
-                <Entry
+                    WidthRequest="200" />
+                <suave:MaterialEntry
+                    AccentColor="Green"
                     Grid.Row="1"
                     IsPassword="true"
                     Placeholder="Digite a sua senha"
-                    PlaceholderColor="Silver"
-                    FontSize="Medium"
-                    WidthRequest="200"
-                    ReturnType="Done" />
+                    WidthRequest="200" />
             </Grid>
             <Button
                 FontSize="Medium"
