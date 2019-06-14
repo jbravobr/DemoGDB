@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:demoapp"
+    x:Class="demoapp.MainPage">
+    <AbsoluteLayout>
+        <ContentView
+            BackgroundColor="Black"
+            Opacity="1"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds="0,0,1,1" />
+        <Image
+            Source="https://loremflickr.com/640/800/stars"
+            Aspect="Fill"
+            AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds="0,0,1,1" />
+        <ContentView
+            x:Name="actIndBackground"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#222222"
+            Opacity="0.6" />
+        <StackLayout
+            Padding="30"
+            Spacing="20"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid
+                RowSpacing="25">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="Auto" />
+                    <RowDefinition
+                        Height="Auto" />
+                </Grid.RowDefinitions>
+                <Entry
+                    Grid.Row="0"
+                    Placeholder="Digite seu usuário"
+                    PlaceholderColor="Silver"
+                    FontSize="Medium"
+                    WidthRequest="200"
+                    ReturnType="Done" />
+                <Entry
+                    Grid.Row="1"
+                    IsPassword="true"
+                    Placeholder="Digite a sua senha"
+                    PlaceholderColor="Silver"
+                    FontSize="Medium"
+                    WidthRequest="200"
+                    ReturnType="Done" />
+            </Grid>
+            <Button
+                FontSize="Medium"
+                FontAttributes="Bold"
+                Text="ENTRAR"
+                TextColor="White"
+                BorderRadius="25"
+                BorderColor="Green"
+                BackgroundColor="Green"
+                WidthRequest="220"
+                HeightRequest="50"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="Login_Click" />
+        </StackLayout>
+        <Label
+            AbsoluteLayout.LayoutFlags="YProportional"
+            AbsoluteLayout.LayoutBounds="80,.8,-1,-1"
+            TextDecorations="Underline"
+            Text="Ainda não possui conta? Clique aqui"
+            TextColor="White"
+            FontSize="Small"
+            LineBreakMode="WordWrap">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="OnTapGestureRecognizerTapped"
+                    NumberOfTapsRequired="1" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label
+            AbsoluteLayout.LayoutFlags="YProportional"
+            AbsoluteLayout.LayoutBounds="130,.86,-1,-1"
+            TextDecorations="Underline"
+            Text="Esqueci minha senha"
+            TextColor="White"
+            FontSize="Small"
+            LineBreakMode="WordWrap">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="OnTapGestureRecognizerTapped"
+                    NumberOfTapsRequired="1" />
+            </Label.GestureRecognizers>
+        </Label>
+    </AbsoluteLayout>
+</ContentPage>
