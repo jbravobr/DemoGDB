@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Xamarin.Forms;
 
 namespace demoapp
 {
@@ -13,6 +16,10 @@ namespace demoapp
         public App()
         {
             InitializeComponent();
+
+            AppCenter.Start("android=dc9b4eec-b41d-4b45-9344-bdc090b5189d;" +
+                  "ios={Your iOS App secret here}",
+                  typeof(Analytics), typeof(Crashes));
 
 #if DEBUG
             HotReloader.Current.Run(this);

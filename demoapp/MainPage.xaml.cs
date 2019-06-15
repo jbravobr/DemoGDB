@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Xamarin.Forms;
 
 namespace demoapp
@@ -24,7 +27,19 @@ namespace demoapp
         /// <param name="eventArgs"></param>
         private void Login_Click(object sender, EventArgs eventArgs)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                Crashes.TrackError(ex);
+                Crashes.TrackError(ex,
+                    new Dictionary<string, string>
+                {
+                    {"Login", "ClicarBotaoLogin"}
+                });
+            }
         }
 
         /// <summary>
@@ -34,7 +49,23 @@ namespace demoapp
         /// <param name="args"></param>
         private void OnTapGestureRecognizerTapped(object sender, EventArgs args)
         {
-
+            try
+            {
+                Analytics.TrackEvent("ESQUECI-MINHA-SENHA",
+                    new Dictionary<string, string>
+                    {
+                        {"Evento", "EsqueciMinhaSenha" }
+                    });
+            }
+            catch (Exception ex)
+            {
+                Crashes.TrackError(ex);
+                Crashes.TrackError(ex,
+                    new Dictionary<string, string>
+                {
+                    {"EsqueciMinhaSenha", "ClicarLabelEsqueciMinhaSenha"}
+                });
+            }
         }
     }
 }

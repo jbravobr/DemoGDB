@@ -11,9 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
     <PackageReference Include="Xamarin.HotReload" Version="1.4.8" />
     <PackageReference Include="MaterialFormControls" Version="2018.2.22-pre1" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.0.0" />
   </ItemGroup>
 </Project>
